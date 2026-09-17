@@ -10,9 +10,12 @@
 
 <p align="center">
  GitHub pages (LIVE DEMO)
-https://eduardoalvarez199501.github.io/logica-programacion-2/</p>
+https://eduardoalvarez199501.github.io/logica-programacion-2/ 
+</p>
+
 ---
-## 📋 Descripción
+
+### 📋 Descripción
 
 Este proyecto consiste en una aplicación web desarrollada con **HTML, CSS, Bootstrap y JavaScript**, cuyo objetivo es practicar conceptos fundamentales de lógica de programación mediante la conversión de unidades de temperatura.
 
