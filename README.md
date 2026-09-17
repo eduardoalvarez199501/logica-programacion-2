@@ -8,6 +8,14 @@
   Aplicación web interactiva para realizar conversiones de temperatura de forma rápida, sencilla y visual.
 </p>
 
+<p align="center">
+ GitHub pages (LIVE DEMO)
+https://eduardoalvarez199501.github.io/logica-programacion-2/
+
+GitHub public repository
+https://github.com/eduardoalvarez199501/logica-programacion-2
+</p>
+
 ---
 
 ## 📋 Descripción
