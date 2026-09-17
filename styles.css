@@ -1,0 +1,545 @@
+/* ==========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================== */
+
+/*
+   Quitamos márgenes innecesarios y hacemos que
+   el cálculo de tamaños sea más sencillo.
+*/
+* {
+    box-sizing: border-box;
+}
+
+
+/*
+   Configuración del cuerpo de la página.
+*/
+body {
+
+    /* Fondo oscuro elegante */
+    background:
+        radial-gradient(
+            circle at top,
+            #243b55,
+            #141e30 60%,
+            #0d1117
+        );
+
+    /* Color del texto */
+    color: white;
+
+    /* Altura mínima de toda la pantalla */
+    min-height: 100vh;
+
+    /* Fuente */
+    font-family: Arial, sans-serif;
+}
+
+
+/* ==========================================================
+   ENCABEZADO
+   ========================================================== */
+
+.temperature-icon {
+
+    font-size: 4rem;
+
+    margin-bottom: 10px;
+
+}
+
+
+.main-title {
+
+    font-size: clamp(2.2rem, 6vw, 4rem);
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+}
+
+
+.subtitle {
+
+    color: #b9c4d0;
+
+    font-size: 1.1rem;
+
+}
+
+
+/* ==========================================================
+   TARJETA PRINCIPAL
+   ========================================================== */
+
+.converter-card {
+
+    /*
+       La tarjeta nunca será demasiado grande
+       en pantallas grandes.
+    */
+    max-width: 850px;
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+    /*
+       Fondo ligeramente transparente.
+    */
+    background: rgba(255, 255, 255, 0.08);
+
+    /*
+       Efecto de vidrio.
+    */
+    backdrop-filter: blur(15px);
+
+    /*
+       Borde sutil.
+    */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    /*
+       Sombra.
+    */
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.4);
+
+}
+
+
+/* ==========================================================
+   TIPO DE CONVERSIÓN
+   ========================================================== */
+
+.small-title {
+
+    color: #8fb8ff;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+#conversionTitle {
+
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==========================================================
+   SWITCH
+   ========================================================== */
+
+.switch-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.switch-label {
+
+    font-weight: bold;
+
+    color: #d8dee7;
+
+}
+
+
+/*
+   Contenedor del switch.
+*/
+.switch {
+
+    position: relative;
+
+    display: inline-block;
+
+    width: 70px;
+
+    height: 36px;
+
+}
+
+
+/*
+   Ocultamos el checkbox original.
+*/
+.switch input {
+
+    opacity: 0;
+
+    width: 0;
+
+    height: 0;
+
+}
+
+
+/*
+   Fondo del switch.
+*/
+.slider {
+
+    position: absolute;
+
+    cursor: pointer;
+
+    inset: 0;
+
+    background-color: #536273;
+
+    border-radius: 50px;
+
+    transition: 0.3s;
+
+}
+
+
+/*
+   Círculo que se mueve.
+*/
+.slider::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 28px;
+
+    height: 28px;
+
+    left: 4px;
+
+    bottom: 4px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+
+}
+
+
+/*
+   Cuando el switch está activado.
+*/
+.switch input:checked + .slider {
+
+    background-color: #4f8cff;
+
+}
+
+
+/*
+   Movemos el círculo hacia la derecha.
+*/
+.switch input:checked + .slider::before {
+
+    transform: translateX(34px);
+
+}
+
+
+/* ==========================================================
+   INPUT
+   ========================================================== */
+
+.input-section {
+
+    margin-top: 45px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.form-label {
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    color: #dce4ee;
+
+}
+
+
+.temperature-input {
+
+    height: 70px;
+
+    font-size: 2rem;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: none;
+
+}
+
+
+.temperature-input:focus {
+
+    box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.3);
+
+}
+
+
+.degree {
+
+    font-size: 1.8rem;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================================
+   MENSAJE DE ERROR
+   ========================================================== */
+
+.error-message {
+
+    min-height: 25px;
+
+    margin-top: 10px;
+
+    color: #ff8f8f;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================================
+   BOTÓN
+   ========================================================== */
+
+.convert-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: #4f8cff;
+
+    color: white;
+
+    font-size: 1.1rem;
+
+    font-weight: bold;
+
+    border: none;
+
+    transition: 0.3s;
+
+}
+
+
+/*
+   Efecto cuando pasamos el mouse.
+*/
+.convert-button:hover {
+
+    background: #75a5ff;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   RESULTADOS
+   ========================================================== */
+
+.results-section {
+
+    margin-top: 50px;
+
+}
+
+
+.results-title {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    font-weight: bold;
+
+}
+
+
+/*
+   Cada tarjeta individual del resultado.
+*/
+.result-card {
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    border-radius: 20px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+
+.result-label {
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #9faec0;
+
+    font-size: 0.85rem;
+
+}
+
+
+/*
+   NÚMERO GRANDE.
+*/
+.result-number {
+
+    font-size: clamp(3rem, 8vw, 5rem);
+
+    font-weight: 800;
+
+    margin: 0;
+
+    line-height: 1;
+
+}
+
+
+/*
+   Unidad °F o K.
+*/
+.result-unit {
+
+    color: #8fb8ff;
+
+    font-size: 1.2rem;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================================
+   FÓRMULAS
+   ========================================================== */
+
+.formula-section {
+
+    margin-top: 40px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #aebaca;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+footer {
+
+    color: #9ba8b7;
+
+}
+
+
+.author {
+
+    font-size: 0.8rem;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+/*
+   Estas reglas se aplican cuando la pantalla
+   es menor a 576px, principalmente celulares.
+*/
+@media (max-width: 576px) {
+
+    .converter-card {
+
+        padding: 25px 18px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .main-title {
+
+        font-size: 2.2rem;
+
+    }
+
+
+    .switch-container {
+
+        gap: 8px;
+
+    }
+
+
+    .switch-label {
+
+        font-size: 0.85rem;
+
+    }
+
+
+    .temperature-input {
+
+        height: 60px;
+
+        font-size: 1.5rem;
+
+    }
+
+}

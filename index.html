@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- 
+         CONFIGURACIÓN BÁSICA DEL DOCUMENTO
+          -->
+
+    <!-- Permite utilizar caracteres como á, é, í, ó, ú y ñ -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página sea responsiva en celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Temperatura- Eduardo Alvarez</title>
+
+
+    <!-- 
+         BOOTSTRAP
+          -->
+
+    <!-- Bootstrap 5.3 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- 
+         NUESTRO CSS
+          -->
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+    <!-- 
+         CONTENEDOR PRINCIPAL
+          -->
+
+    <main class="container py-5">
+
+        <!-- 
+             ENCABEZADO
+              -->
+
+        <section class="text-center mb-5">
+
+            <!-- Icono -->
+            <div class="temperature-icon">
+                🌡️
+            </div>
+
+            <!-- Título principal -->
+            <h1 class="main-title">
+                Conversor de Temperatura
+            </h1>
+
+            <!-- Descripción -->
+            <p class="subtitle">
+                Convierte temperaturas de forma rápida y sencilla. 
+            </p>
+
+        </section>
+
+
+        <!-- 
+             TARJETA PRINCIPAL
+              -->
+
+        <section class="converter-card mx-auto">
+
+            <!-- 
+                 SELECTOR DEL TIPO DE CONVERSIÓN
+                  -->
+
+            <div class="conversion-header text-center">
+
+                <p class="small-title">
+                    TIPO DE CONVERSIÓN
+                </p>
+
+                <!-- Título que cambiará mediante JavaScript -->
+                <h2 id="conversionTitle">
+                    Celsius → Fahrenheit + Kelvin
+                </h2>
+
+
+                <!-- ====
+                     SWITCH
+                     ==== -->
+
+                <div class="switch-container">
+
+                    <span class="switch-label">
+                        Celsius
+                    </span>
+
+                    <label class="switch">
+
+                        <!--
+                            Este checkbox funciona como nuestro switch.
+                            JavaScript detectará si está activado o desactivado.
+                        -->
+                        <input
+                            type="checkbox"
+                            id="conversionSwitch"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                    <span class="switch-label">
+                        Fahrenheit
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 
+                 ÁREA DE ENTRADA
+                  -->
+
+            <div class="input-section">
+
+                <label
+                    for="temperatureInput"
+                    id="inputLabel"
+                    class="form-label"
+                >
+                    Ingresa la temperatura en Celsius
+                </label>
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="temperatureInput"
+                        class="form-control temperature-input"
+                        placeholder="45"
+                    >
+
+                    <span class="input-group-text degree">
+                        °
+                    </span>
+
+                </div>
+
+                <!-- Mensaje de error -->
+                <div
+                    id="errorMessage"
+                    class="error-message"
+                ></div>
+
+            </div>
+
+
+            <!-- 
+                 BOTÓN DE CONVERTIR
+                  -->
+
+            <div class="text-center">
+
+                <button
+                    id="convertButton"
+                    class="btn convert-button"
+                >
+                    Convertir temperatura
+                </button>
+
+            </div>
+
+
+            <!-- 
+                 RESULTADOS
+                  -->
+
+            <section class="results-section">
+
+                <h3 class="results-title">
+                    Resultado
+                </h3>
+
+
+                <div class="row g-4">
+
+                    <!-- 
+                         RESULTADO 1
+                          -->
+
+                    <div class="col-md-6">
+
+                        <div class="result-card">
+
+                            <p
+                                class="result-label"
+                                id="resultLabel1"
+                            >
+                                Fahrenheit
+                            </p>
+
+                            <!--
+                                Aquí JavaScript colocará
+                                el resultado.
+                            -->
+                            <p
+                                class="result-number"
+                                id="result1"
+                            >
+                                —
+                            </p>
+
+                            <span class="result-unit">
+                                °F
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 
+                         RESULTADO 2
+                          -->
+
+                    <div class="col-md-6">
+
+                        <div class="result-card">
+
+                            <p
+                                class="result-label"
+                                id="resultLabel2"
+                            >
+                                Kelvin
+                            </p>
+
+                            <p
+                                class="result-number"
+                                id="result2"
+                            >
+                                —
+                            </p>
+
+                            <span class="result-unit">
+                                K
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 
+                 FÓRMULAS VISUALES
+                  -->
+
+            <div class="formula-section text-center">
+
+                <p>
+                    <strong>Fahrenheit:</strong>
+                    (°C × 9/5) + 32
+                </p>
+
+                <p>
+                    <strong>Kelvin:</strong>
+                    °C + 273.15
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- 
+             PIE DE PÁGINA
+              -->
+
+        <footer class="text-center mt-5">
+
+            <p>
+                Proyecto de Lógica de Programación 2 - Eduardo Alvarez Alvarez
+            </p>
+
+            <p class="author">
+                JavaScript • Bootstrap • CSS • GenMex - Cohorte 71
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- 
+         JAVASCRIPT
+          -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
