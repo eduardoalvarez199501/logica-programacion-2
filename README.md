@@ -10,12 +10,7 @@
 
 <p align="center">
  GitHub pages (LIVE DEMO)
-https://eduardoalvarez199501.github.io/logica-programacion-2/
-
-GitHub public repository
-https://github.com/eduardoalvarez199501/logica-programacion-2
-</p>
-
+https://eduardoalvarez199501.github.io/logica-programacion-2/</p>
 ---
 
 ## 📋 Descripción
